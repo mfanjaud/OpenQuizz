@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		A7A27328205DAE2A00D73009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A27327205DAE2A00D73009 /* AppDelegate.swift */; };
 		A7A2732A205DAE2A00D73009 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A27329205DAE2A00D73009 /* ViewController.swift */; };
-		A7A2732D205DAE2A00D73009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A2732B205DAE2A00D73009 /* Main.storyboard */; };
 		A7A2732F205DAE2A00D73009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7A2732E205DAE2A00D73009 /* Assets.xcassets */; };
 		A7A27332205DAE2A00D73009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A27330205DAE2A00D73009 /* LaunchScreen.storyboard */; };
 		A7A2733F205DB47700D73009 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A2733E205DB47700D73009 /* Question.swift */; };
 		A7A27341205DB73600D73009 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A27340205DB73600D73009 /* Game.swift */; };
 		A7A27343205DBD2D00D73009 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A27342205DBD2D00D73009 /* QuestionManager.swift */; };
+		A7A27346205DC82500D73009 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A27345205DC82500D73009 /* QuestionView.swift */; };
+		A7A27347205DD90A00D73009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A2732B205DAE2A00D73009 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		A7A2733E205DB47700D73009 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		A7A27340205DB73600D73009 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A7A27342205DBD2D00D73009 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		A7A27345205DC82500D73009 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				A7A2732B205DAE2A00D73009 /* Main.storyboard */,
+				A7A27345205DC82500D73009 /* QuestionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,9 +169,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A27347205DD90A00D73009 /* Main.storyboard in Resources */,
 				A7A27332205DAE2A00D73009 /* LaunchScreen.storyboard in Resources */,
 				A7A2732F205DAE2A00D73009 /* Assets.xcassets in Resources */,
-				A7A2732D205DAE2A00D73009 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +186,7 @@
 				A7A2732A205DAE2A00D73009 /* ViewController.swift in Sources */,
 				A7A27328205DAE2A00D73009 /* AppDelegate.swift in Sources */,
 				A7A27343205DBD2D00D73009 /* QuestionManager.swift in Sources */,
+				A7A27346205DC82500D73009 /* QuestionView.swift in Sources */,
 				A7A27341205DB73600D73009 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
