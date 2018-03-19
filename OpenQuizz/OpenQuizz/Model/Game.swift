@@ -11,8 +11,8 @@ import Foundation
 class Game {
     var score = 0
     
-    private var questions = [Question]()
-    private var currentIndex = 0
+    var questions = [Question]()
+    var currentIndex = 0
     
     var state: State = .ongoing
     
@@ -45,7 +45,7 @@ class Game {
         goToNextQuestion()
     }
     
-    private func goToNextQuestion() {
+    func goToNextQuestion() {
         if currentIndex < questions.count - 1 {
             currentIndex += 1
         } else {
@@ -53,7 +53,7 @@ class Game {
         }
     }
     
-    private func finishGame() {
+    func finishGame() {
         state = .over
     }
 }

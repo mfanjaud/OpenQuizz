@@ -10,8 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Balham.otf">
-            <string>Balham</string>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+            <string>HelveticaNeue-Thin</string>
         </array>
     </customFonts>
     <scenes>
@@ -23,37 +24,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTd-vZ-hcP">
-                                <rect key="frame" x="109" y="580" width="156" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40374207499999998" green="0.54976207020000001" blue="0.7647339702" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="23"/>
-                                <state key="normal" title="New Game">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapNewGameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="pBz-ZJ-vNc"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="976-Wo-gH6">
-                                <rect key="frame" x="169" y="595" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiG-jq-1go">
-                                <rect key="frame" x="37.5" y="306" width="300" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xd4-7x-uE3" customClass="QuestionView" customModule="OpenQuizz" customModuleProvider="target">
-                                <rect key="frame" x="65" y="53" width="245" height="245"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RqH-h0-h5Z" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIY-AO-Re2">
+                                        <rect key="frame" x="0.0" y="0.0" width="52" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                        <color key="backgroundColor" red="0.40374207499999998" green="0.54976207020000001" blue="0.7647339702" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score : 0/10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiG-jq-1go">
+                                        <rect key="frame" x="227" y="28" width="140" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x/10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOc-Zb-CtN">
+                                        <rect key="frame" x="8" y="28" width="140" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UqY-1k-zhi" userLabel="Bottom View">
+                                <rect key="frame" x="0.0" y="456" width="375" height="211"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="976-Wo-gH6">
+                                        <rect key="frame" x="169" y="87" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTd-vZ-hcP">
+                                        <rect key="frame" x="87.5" y="86" width="200" height="40"/>
+                                        <color key="backgroundColor" red="0.40374207499999998" green="0.54976207020000001" blue="0.7647339702" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="gc8-eL-6K1"/>
+                                            <constraint firstAttribute="width" constant="200" id="kkg-yI-AZI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                        <state key="normal" title="New Game">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapNewGameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="pBz-ZJ-vNc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YTd-vZ-hcP" firstAttribute="centerY" secondItem="UqY-1k-zhi" secondAttribute="centerY" id="L80-mN-a2l"/>
+                                    <constraint firstItem="976-Wo-gH6" firstAttribute="centerX" secondItem="UqY-1k-zhi" secondAttribute="centerX" id="MPh-hW-S6u"/>
+                                    <constraint firstItem="YTd-vZ-hcP" firstAttribute="centerX" secondItem="UqY-1k-zhi" secondAttribute="centerX" id="RpF-JY-lam"/>
+                                    <constraint firstItem="976-Wo-gH6" firstAttribute="centerY" secondItem="UqY-1k-zhi" secondAttribute="centerY" id="t2H-Bo-AmV"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xd4-7x-uE3" customClass="QuestionView" customModule="OpenQuizz" customModuleProvider="target">
+                                <rect key="frame" x="65" y="211" width="245" height="245"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ou se cache donc le Marsupilami ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bi9-hW-dLC">
                                         <rect key="frame" x="8" y="8" width="229" height="229"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="23"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -63,6 +93,10 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.75336271519999998" green="0.76818287370000005" blue="0.78431683780000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="245" id="1mD-Yw-prq"/>
+                                    <constraint firstAttribute="height" constant="245" id="ehA-MT-mDq"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="icon" destination="Mn9-Hq-Hfz" id="E2m-yx-yjc"/>
                                     <outlet property="label" destination="bi9-hW-dLC" id="byr-eC-Wab"/>
@@ -70,11 +104,24 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.3553737998" green="0.41707497840000002" blue="0.50197321179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="UqY-1k-zhi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1yd-pl-x6z"/>
+                            <constraint firstItem="Xd4-7x-uE3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2jx-nQ-hIq"/>
+                            <constraint firstItem="UqY-1k-zhi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EyD-ca-LlZ"/>
+                            <constraint firstItem="UqY-1k-zhi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Oqe-iT-2e4"/>
+                            <constraint firstItem="Xd4-7x-uE3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RMs-1l-yIc"/>
+                            <constraint firstItem="RqH-h0-h5Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y5E-um-xb3"/>
+                            <constraint firstItem="UqY-1k-zhi" firstAttribute="top" secondItem="Xd4-7x-uE3" secondAttribute="bottom" id="kRh-zt-5zj"/>
+                            <constraint firstItem="RqH-h0-h5Z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ot5-OF-xpI"/>
+                            <constraint firstItem="RqH-h0-h5Z" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rQX-Nl-HvU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="976-Wo-gH6" id="ir1-JQ-1sl"/>
                         <outlet property="newGameButton" destination="YTd-vZ-hcP" id="RkF-Jo-yBr"/>
+                        <outlet property="progressBar" destination="VIY-AO-Re2" id="NbR-HW-k0M"/>
+                        <outlet property="progressLabel" destination="EOc-Zb-CtN" id="zQo-bL-YWN"/>
                         <outlet property="questionView" destination="Xd4-7x-uE3" id="Zgx-QF-YOH"/>
                         <outlet property="scoreLabel" destination="SiG-jq-1go" id="OB7-O4-aui"/>
                     </connections>

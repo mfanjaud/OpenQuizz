@@ -15,7 +15,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionView: QuestionView!
     
+    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var progressBar: UIView!
+    
+    
     var game = Game()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +43,16 @@ class ViewController: UIViewController {
         startNewGame()
     }
     
-    private func startNewGame(){
+    func startNewGame(){
         activityIndicator.isHidden = false
         newGameButton.isHidden = true
         
         questionView.title = "Loading..."
         questionView.style = .standard
         
-        scoreLabel.text = "0 / 10"
+        scoreLabel.text = "Score : 0 / 10"
+        progressLabel.text = "1 / 10"
+        progressBar.frame.size.width = (view.frame.size.width / CGFloat(10)) * CGFloat(game.currentIndex + 1)
         
         game.refresh()
         
@@ -69,7 +77,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func transformQuestionViewWith(gesture: UIPanGestureRecognizer) {
+    func transformQuestionViewWith(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: questionView)
         
         let translationTransform = CGAffineTransform(translationX: translation.x, y: translation.y)
@@ -88,7 +96,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func answerQuestion() {
+    func answerQuestion() {
         switch questionView.style {
         case .correct:
             game.answerCurrentQuestion(with: true)
@@ -98,7 +106,8 @@ class ViewController: UIViewController {
             break
         }
         
-        scoreLabel.text = "\(game.score) / 10"
+        loadLabels()
+        
         
         let screenWidth = UIScreen.main.bounds.width
         var translationTransform: CGAffineTransform
@@ -117,7 +126,7 @@ class ViewController: UIViewController {
         })
     }
     
-    private func showQuestionView() {
+    func showQuestionView() {
         questionView.transform = .identity
         questionView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         questionView.style = .standard
@@ -132,6 +141,13 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
             self.questionView.transform = .identity
         }, completion:nil)
+        
+    }
+    
+    func loadLabels(){
+        scoreLabel.text = "Score : \(game.score) / 10"
+        progressLabel.text = "\(game.currentIndex + 1) / 10"
+        progressBar.frame.size.width = (view.frame.size.width / CGFloat(10)) * CGFloat(game.currentIndex + 1)
         
     }
 }
